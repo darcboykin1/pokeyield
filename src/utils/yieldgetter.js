@@ -1,14 +1,22 @@
 const request = require("request");
 
 const getValues = (pokemon,callback) => {
-    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`;
-    
+    const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}`;
+
     request({url:url, json:true}, (error, res)=>{
+
         if(error){
             console.log("unable to connect");
         } else if (res.body === "Not Found"){
-            console.log("Pokemon not Found. Try another search?")
-        } else {
+
+            const error = "Pokemon not Found. Try another search.";
+            callback(undefined, error);
+
+        } else if(pokemon === ""){
+            const error = "Please enter a valid Pokemon name.";
+            console.log(error);
+            callback(error);
+        }else {
             pokeinfo = res.body;
 
             const { stats } = pokeinfo;

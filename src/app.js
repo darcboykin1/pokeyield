@@ -27,7 +27,7 @@ app.use(express.static(public));
 
 app.get("", (req, res)=>{
     res.render("index", {
-        title: "Pokemon Yield Catcher"
+        title: "Pokemon Yield Catcher - Enter a Pokemon name and find out what Effort Values they yield!"
     })
 });
 
@@ -35,12 +35,17 @@ app.get("/pokemon", (req, res)=>{
     const requestedPokemon = req.query.q
 
     if(requestedPokemon){
-        getValues(requestedPokemon, (yields)=>{
-            res.send({yields})
+        getValues(requestedPokemon, (yields, error)=>{
+            if(error){
+                console.log("error")
+                res.send({error})
+            } else {
+                res.send({yields})
+            }
         });
     } else if (!requestedPokemon){
-        res.send({
-            error: "Please enter a valid pokemon name"
+        getValues(requestedPokemon, (error)=>{
+            res.send({error})
         })
     }
     

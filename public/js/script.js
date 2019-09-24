@@ -1,5 +1,3 @@
-console.log("loaded");
-
 // create function to fetch data from the JSON endpoint
 const form = document.querySelector("#pokeform");
 const query = document.querySelector("#search");
@@ -19,10 +17,13 @@ form.addEventListener("submit", (e)=>{
 
     fetch(`http://localhost:5000/pokemon?q=${pokemon}`).then((res)=>{
         res.json().then((data)=>{
+            if(data.error){
+                dataWindow.innerHTML = data.error;
+            } else if (data.yields){
 
-            const yields = data.yields;
+                const yields = data.yields;
 
-            yields.forEach(yield => {
+                yields.forEach(yield => {
                 let yieldInfo = `${pokemon} yields ${yield.effort} point(s) of ${yield.stat.name}; ${yield.effort * 2} with Macho Brace; ${yield.effort * 2} with Pokerus; ${yield.effort * 4} with Pokerus and Macho Brace.`;
 
                 console.log(yieldInfo);
@@ -34,7 +35,10 @@ form.addEventListener("submit", (e)=>{
                 yieldText.appendChild(textBody);
 
                 dataWindow.appendChild(yieldText);
+
             });
+            }
+            
         })
     })
 })
