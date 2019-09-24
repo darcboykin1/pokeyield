@@ -2,8 +2,7 @@ const request = require("request");
 
 const getValues = (pokemon,callback) => {
     const url = `https://pokeapi.co/api/v2/pokemon/${pokemon}/`;
-    let values;
-
+    
     request({url:url, json:true}, (error, res)=>{
         if(error){
             console.log("unable to connect");

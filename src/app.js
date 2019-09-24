@@ -39,8 +39,8 @@ app.get("/pokemon", (req, res)=>{
             res.send({yields})
         });
     } else if (!requestedPokemon){
-        res.render("404", {
-            message: "page not found"
+        res.send({
+            error: "Please enter a valid pokemon name"
         })
     }
     
