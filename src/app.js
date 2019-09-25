@@ -28,7 +28,8 @@ app.use(express.static(public));
 
 app.get("", (req, res)=>{
     res.render("index", {
-        title: "Pokemon Yield Catcher - Enter a Pokemon name and find out what Effort Values they yield!"
+        title: "PokeYield",
+        header: "Pokemon Yield Catcher - Enter a Pokemon name and find out what Effort Values they yield!"
     })
 });
 

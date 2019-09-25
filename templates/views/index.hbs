@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="icon" href="/img/pokeball.jpg">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>{{title}}</title>
 </head>
 <body>
-    <p>{{title}}</p>
-    <form action="" id="pokeform">
-        <input type="text" placeholder="search pokemon here" id="search">
-        <button id="button">search</button>
-    </form>
-    <div id="yield_data">
-
+    <div class="container">
+        <p>{{header}}</p>
+        <form action="" id="pokeform">
+            <input type="text" placeholder="search pokemon here" id="search">
+            <br>
+            <button id="button">search</button>
+        </form>
+        <div id="yield_data"></div>
     </div>
     <script src="./js/script.js"></script>
 </body>
