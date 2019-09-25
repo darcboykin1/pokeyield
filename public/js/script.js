@@ -15,7 +15,7 @@ form.addEventListener("submit", (e)=>{
 
     dataWindow.innerHTML = "loading...";
 
-    fetch(`http://localhost:5000/pokemon?q=${pokemon}`).then((res)=>{
+    fetch(`/pokemon?q=${pokemon}`).then((res)=>{
         res.json().then((data)=>{
             if(data.error){
                 dataWindow.innerHTML = data.error;

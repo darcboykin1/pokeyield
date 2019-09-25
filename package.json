@@ -1,0 +1,26 @@
+{
+  "name": "pokeyield",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "hbs": "^4.0.4",
+    "nodemon": "^1.19.2",
+    "request": "^2.88.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "starts": "node src/app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/darcboykin1/pokeyield.git"
+  },
+  "author": "Darc B",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/darcboykin1/pokeyield/issues"
+  },
+  "homepage": "https://github.com/darcboykin1/pokeyield#readme"
+}
