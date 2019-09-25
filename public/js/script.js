@@ -21,14 +21,12 @@ form.addEventListener("submit", (e)=>{
                 dataWindow.innerHTML = data.error;
             } else if (data.yields){
 
+                dataWindow.innerHTML = "";
+
                 const yields = data.yields;
 
                 yields.forEach(yield => {
                 let yieldInfo = `${pokemon} yields ${yield.effort} point(s) of ${yield.stat.name}; ${yield.effort * 2} with Macho Brace; ${yield.effort * 2} with Pokerus; ${yield.effort * 4} with Pokerus and Macho Brace.`;
-
-                console.log(yieldInfo);
-
-                dataWindow.innerHTML = "";
 
                 let yieldText = document.createElement("p");
                 let textBody = document.createTextNode(yieldInfo);
