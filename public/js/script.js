@@ -15,7 +15,7 @@ form.addEventListener("submit", (e)=>{
 
     dataWindow.innerHTML = "loading...";
 
-    fetch(`/pokemon?q=${pokemon}`).then((res)=>{
+    fetch(`/pokemon?q=${pokemon.toLowerCase()}`).then((res)=>{
         res.json().then((data)=>{
             if(data.error){
                 dataWindow.innerHTML = data.error;
