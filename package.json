@@ -11,7 +11,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "starts": "node src/app.js"
+    "start": "node src/app.js"
   },
   "repository": {
     "type": "git",
