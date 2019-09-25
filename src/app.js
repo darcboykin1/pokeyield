@@ -7,6 +7,7 @@ const hbs = require("hbs");
 const request = require("request");
 
 const app = express();
+const port = process.env.PORT || 5000;
 
 // defining the paths for express configuration
 const public = path.join(__dirname, "../public");
@@ -51,6 +52,6 @@ app.get("/pokemon", (req, res)=>{
     
 });
 
-app.listen(5000, ()=>{
+app.listen(port, ()=>{
     console.log("Server is listening on port 5000");
 });
