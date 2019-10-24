@@ -35,6 +35,7 @@ app.get("", (req, res)=>{
 
 app.get("/pokemon", (req, res)=>{
     const requestedPokemon = req.query.q
+    // req.query.q is created when the user looks up a pokemon, and is variable
 
     if(requestedPokemon){
         getValues(requestedPokemon, (yields, error)=>{
@@ -50,7 +51,6 @@ app.get("/pokemon", (req, res)=>{
             res.send({error})
         })
     }
-    
 });
 
 app.listen(port, ()=>{

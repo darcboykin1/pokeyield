@@ -45,3 +45,10 @@ button:hover{
     transition: 0.7s;
     cursor: pointer;
 }
+
+@media only screen and (max-width: 800px){
+    body{
+        /* background-position: left; */
+        background-size: cover;
+    }
+}
