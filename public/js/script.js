@@ -26,7 +26,7 @@ form.addEventListener("submit", (e)=>{
                 const yields = data.yields;
 
                 yields.forEach(yield => {
-                let yieldInfo = `${pokemon} yields ${yield.effort} point(s) of ${yield.stat.name}; ${yield.effort * 2} with Macho Brace; ${yield.effort * 2} with Pokerus; ${yield.effort * 4} with Pokerus and Macho Brace.`;
+                let yieldInfo = `${pokemon} yields ${yield.effort} point(s) of ${yield.stat.name}; ${yield.effort * 2} with Macho Brace; ${yield.effort * 2} with Pokerus; ${yield.effort * 4} with Pokerus and Macho Brace. Defeat ${252/yield.effort} to max out the ${yield.stat.name} stat without items.`;
 
                 let yieldText = document.createElement("p");
                 let textBody = document.createTextNode(yieldInfo);
